@@ -27,11 +27,13 @@ const server = http.createServer((req, res) => {
   else if (req.url === '/about' && req.method === 'GET') {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end('About page');
+    console.log(req.url)
   }
 
   else if (req.url === '/data' && req.method === 'POST') {
     let body = '';
     req.setEncoding('utf8');
+
 
     req.on('data', chunk => {
       body += chunk;
